@@ -1,0 +1,28 @@
+{
+  "localization": {
+    "country_label": {
+      "type": "string",
+      "default": "البلد"
+    },
+    "language_label": {
+      "type": "string",
+      "default": "اللغة"
+    },
+    "currency_label": {
+      "type": "string",
+      "default": "العملة"
+    },
+    "select_country": {
+      "type": "string",
+      "default": "اختر البلد"
+    },
+    "select_language": {
+      "type": "string",
+      "default": "اختر اللغة"
+    },
+    "select_currency": {
+      "type": "string",
+      "default": "اختر العملة"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+/* RTL Header Styles for Arabic */
+[dir="rtl"] .header,
+[lang="ar"] .header {
+  direction: rtl;
+  text-align: right;
+}

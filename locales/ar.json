@@ -1,0 +1,10 @@
+{
+  "localization": {
+    "country_label": "البلد",
+    "language_label": "اللغة",
+    "currency_label": "العملة",
+    "select_country": "اختر البلد",
+    "select_language": "اختر اللغة",
+    "select_currency": "اختر العملة"
+  }
+}
