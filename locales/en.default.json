@@ -335,6 +335,46 @@
     },
     "page": {
       "title": "Page title"
+    },
+    "faq": {
+      "name": "FAQ",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "heading_alignment": {
+          "label": "Heading alignment",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          }
+        },
+        "open_first_faq": {
+          "label": "Open first FAQ item"
+        }
+      },
+      "blocks": {
+        "faq_item": {
+          "name": "FAQ Item",
+          "settings": {
+            "question": {
+              "label": "Question"
+            },
+            "answer": {
+              "label": "Answer"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "FAQ"
+      },
+      "empty_state": "Add FAQ items to get started"
     }
   },
   "localization": {
