@@ -1,12 +1,64 @@
 .quick-add {
-  position: relative;
-  grid-row-start: 4;
-  margin: 0 0 1rem;
-  z-index: 1;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  margin-top: 8px;
+  width: 100px;
 }
 
 .card--card .quick-add {
-  margin: 0 1.3rem 1rem;
+  margin: 0;
+}
+
+.card__information {
+  position: relative;
+  padding-right: 4rem;
+}
+
+.card__heading {
+  margin-right: 3rem;
+}
+
+.quick-add__submit {
+  padding: 0.5rem;
+  min-width: auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.card__title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__title-row .card__heading {
+  flex: 1;
+  margin: 0;
+}
+
+.card__title-row .quick-add {
+  flex-shrink: 0;
+  margin: 0;
+  grid-row-start: unset;
+}
+
+.card__title-row .quick-add__submit {
+  padding: 0.5rem;
+  min-width: auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .quick-add-modal {
@@ -208,6 +260,18 @@ quick-add-modal .product-form__buttons {
   padding: 0.8rem;
   min-width: 100%;
   box-sizing: border-box;
+}
+
+.quick-add__submit .icon-cart {
+  width: 3rem;
+  height: 3rem;
+  vertical-align: middle;
+}
+
+.quick-add__submit svg {
+  width: 3rem;
+  height: 3rem;
+  vertical-align: middle;
 }
 
 quick-add-modal .product-media-container.constrain-height {
