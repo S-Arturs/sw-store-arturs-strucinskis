@@ -1,0 +1,62 @@
+{%- if product and product.variants.size > 1 -%}
+  {%- liquid
+    assign out_of_stock_variants = product.variants | where: 'available', false
+    assign out_of_stock_options = ''
+    
+    if out_of_stock_variants.size > 0
+      for option in product.options_with_values
+        assign out_of_stock_values = ''
+        assign option_values = option.values
+        
+        for value in option_values
+          assign has_out_of_stock_variant = false
+          
+          for variant in out_of_stock_variants
+            assign variant_option_value = ''
+            case option.position
+              when 1
+                assign variant_option_value = variant.option1
+              when 2
+                assign variant_option_value = variant.option2
+              when 3
+                assign variant_option_value = variant.option3
+            endcase
+            
+            if variant_option_value == value
+              assign has_out_of_stock_variant = true
+              break
+            endif
+          endfor
+          
+          if has_out_of_stock_variant
+            if out_of_stock_values != ''
+              assign out_of_stock_values = out_of_stock_values | append: ', '
+            endif
+            assign out_of_stock_values = out_of_stock_values | append: value
+          endif
+        endfor
+        
+        if out_of_stock_values != ''
+          if out_of_stock_options != ''
+            assign out_of_stock_options = out_of_stock_options | append: '; '
+          endif
+          assign out_of_stock_options = out_of_stock_options | append: option.name | append: ': ' | append: out_of_stock_values
+        endif
+      endfor
+    endif
+  -%}
+
+  {%- if out_of_stock_options != '' -%}
+    <div class="out-of-stock-variants">
+      <p class="out-of-stock-variants__title caption-large">
+        <strong>{{ 'products.product.out_of_stock_variants' | t }}:</strong>
+      </p>
+      <p class="out-of-stock-variants__list caption">
+        {{ out_of_stock_options }}
+      </p>
+      <p class="out-of-stock-variants__note caption">
+        <small>{{ out_of_stock_variants.size }} variant{{ out_of_stock_variants.size | pluralize: '', 's' }} currently unavailable</small>
+      </p>
+    </div>
+  {%- endif -%}
+{%- endif -%} 
